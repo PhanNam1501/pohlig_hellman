@@ -26,3 +26,9 @@ def baby_step_giant_step (h, g, n) :
         y = y * u
         j = j + 1
     return L.index(y) + m * j
+p = 1019  # Example prime
+F = FiniteField(p)
+g = F.multiplicative_generator()  # Generator of the group
+h = g^123
+result = pohlig_hellman(h, g)
+print("Discrete log:", result)
